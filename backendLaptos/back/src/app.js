@@ -45,7 +45,7 @@ app.get("/laptops", async (req, res) => {
 
 // PUT /laptops/:id → actualizar laptop
 app.put("/laptops/:id", async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params; 
   const { marca, procesador, memoria, disco } = req.body;
   await pool.query(
     "UPDATE laptops SET marca=?, procesador=?, memoria=?, disco=? WHERE id=?",
@@ -62,6 +62,4 @@ app.delete("/laptops/:id", async (req, res) => {
   res.status(200).send();
 });
 
-app.listen(3000, () => console.log("Servidor corriendo en puerto 3000"));
-
-
+app.listen(3000, () => console.log("Servidor corriendo en puerto"));
